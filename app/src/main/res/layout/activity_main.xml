@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/messageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/inputRelativeLayout">
+
+        <TextView
+            android:id="@+id/messagesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="9pt"
+            android:scrollbarSize="16sp"
+            android:layout_margin="20dp"/>
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/inputRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@id/sendButton"
+            android:gravity="start"
+            android:hint="Consulta a Pip"
+            android:imeOptions="actionDone"
+            android:inputType="textShortMessage"
+            android:padding="15dp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:text="Enviar"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
